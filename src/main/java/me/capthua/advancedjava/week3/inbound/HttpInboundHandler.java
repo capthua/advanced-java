@@ -12,14 +12,14 @@ import java.util.List;
 
 public class HttpInboundHandler extends ChannelInboundHandlerAdapter {
 
-    private final List<String> proxyServer;
+    private final List<String> proxyServers;
     private HttpOutboundHandler handler;
     private HttpRequestFilter filter = new HeaderHttpRequestFilter();
 
 
-    public HttpInboundHandler(List<String> proxyServer) {
-        this.proxyServer=proxyServer;
-        this.handler=new HttpOutboundHandler(this.proxyServer);
+    public HttpInboundHandler(List<String> proxyServers) {
+        this.proxyServers =proxyServers;
+        this.handler=new HttpOutboundHandler(this.proxyServers);
     }
 
     @Override

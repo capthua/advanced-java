@@ -12,7 +12,7 @@ import me.capthua.advancedjava.week3.filter.HeaderHttpResponseFilter;
 import me.capthua.advancedjava.week3.filter.HttpRequestFilter;
 import me.capthua.advancedjava.week3.filter.HttpResponseFilter;
 import me.capthua.advancedjava.week3.router.HttpEndpointRouter;
-import me.capthua.advancedjava.week3.router.RandomHttpEndpointRouter;
+import me.capthua.advancedjava.week3.router.RoundRobinHttpEndpointRouter;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.concurrent.FutureCallback;
@@ -37,7 +37,8 @@ public class HttpOutboundHandler {
     private List<String> backendUrls;
 
     HttpResponseFilter filter = new HeaderHttpResponseFilter();
-    HttpEndpointRouter router = new RandomHttpEndpointRouter();
+    //HttpEndpointRouter router = new RandomHttpEndpointRouter();
+    HttpEndpointRouter router = new RoundRobinHttpEndpointRouter();
 
     public HttpOutboundHandler(List<String> backends) {
 
