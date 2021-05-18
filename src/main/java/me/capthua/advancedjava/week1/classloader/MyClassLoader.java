@@ -4,7 +4,7 @@ import java.io.*;
 
 public class MyClassLoader extends ClassLoader{
 
-    private static final String FILE_PATH="D:\\docs\\JavaProjects\\advanced-java\\src\\main\\java\\me\\capthua\\advancedjava\\week1\\classloader\\Hello.xlass";
+    private static final String FILE_PATH="E:\\ideaProjects\\advanced-java\\src\\main\\java\\me\\capthua\\advancedjava\\week1\\classloader\\Hello.xlass";
 
     public static void main(String[] args) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
         new MyClassLoader().findClass("Hello").newInstance();

@@ -1,4 +1,4 @@
-create table goods
+create table tb_goods
 (
     id          varchar(32)  null,
     name        varchar(64)  null,
@@ -8,7 +8,7 @@ create table goods
     quantity    int          null
 );
 
-create table `order`
+create table tb_order
 (
     id          varchar(32) null,
     create_time datetime    null,
@@ -20,7 +20,7 @@ create table `order`
     user_id     varchar(32) null
 );
 
-create table order_goods
+create table tb_order_goods
 (
     id       varchar(32) null,
     order_id varchar(32) null,
@@ -28,7 +28,7 @@ create table order_goods
     count    int         null
 );
 
-create table user
+create table tb_user
 (
     id           varchar(32)  null,
     username     varchar(32)  null,
